@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import "../styles/AddProperty.css";
 
-const AddProperty = () => {
+const AddProperty = (props) => {
   const initialState = {
     fields: {
       title: "",
+      city: "Manchester",
     },
   };
 
@@ -33,6 +34,20 @@ const AddProperty = () => {
             value={fields.title}
             onChange={handleFieldChange}
           />
+        </label>
+        <label htmlFor="city">
+          City
+          <select
+            id="city"
+            name="city"
+            value={fields.city}
+            onChange={handleFieldChange}
+          >
+            <option value="Manchester">Manchester</option>
+            <option value="Leeds">Leeds</option>
+            <option value="Sheffield">Sheffield</option>
+            <option value="Liverpool">Liverpool</option>
+          </select>
         </label>
         <button type="submit">Add</button>
       </form>
