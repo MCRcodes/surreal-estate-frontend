@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../styles/AddProperty.css";
 
-const AddProperty = (props) => {
+const AddProperty = () => {
   const initialState = {
     fields: {
       title: "",
@@ -36,6 +36,7 @@ const AddProperty = (props) => {
           <input
             id="title"
             name="title"
+            placeholder="Property tagline"
             value={fields.title}
             onChange={handleFieldChange}
           />
@@ -107,6 +108,7 @@ const AddProperty = (props) => {
           <input
             id="email"
             name="email"
+            placeholder="Contact email"
             type="email"
             value={fields.email}
             onChange={handleFieldChange}
