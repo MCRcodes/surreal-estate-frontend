@@ -7,6 +7,10 @@ const AddProperty = (props) => {
       title: "",
       city: "Manchester",
       type: "",
+      bedrooms: 0,
+      bathrooms: 0,
+      price: 0,
+      email: "",
     },
   };
 
@@ -66,6 +70,47 @@ const AddProperty = (props) => {
             <option value="Cottage">Cottage</option>
             <option value="Bungalow">Bungalow</option>
           </select>
+        </label>
+        <label htmlFor="price">
+          Price
+          <input
+            id="price"
+            name="price"
+            type="number"
+            value={fields.price}
+            onChange={handleFieldChange}
+          />
+          <span>£</span>
+        </label>
+        <label htmlFor="bedrooms">
+          Bedrooms
+          <input
+            id="bedrooms"
+            name="bedrooms"
+            type="number"
+            value={fields.bedrooms}
+            onChange={handleFieldChange}
+          />
+        </label>
+        <label htmlFor="bathrooms">
+          Bathrooms
+          <input
+            id="bathrooms"
+            name="bathrooms"
+            type="number"
+            value={fields.bathrooms}
+            onChange={handleFieldChange}
+          />
+        </label>
+        <label htmlFor="email">
+          Email
+          <input
+            id="email"
+            name="email"
+            type="email"
+            value={fields.email}
+            onChange={handleFieldChange}
+          />
         </label>
         <button type="submit">Add</button>
       </form>
