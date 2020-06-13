@@ -2,9 +2,9 @@ import React from "react";
 import { render } from "@testing-library/react";
 import App from "../components/App";
 
-test("renders learn react link", () => {
+test("renders Surreal Estate Heading", () => {
   const { getByText } = render(<App />);
 
-  const headingElement = getByText(/hello world/i);
+  const headingElement = getByText(/estate/i);
   expect(headingElement).toBeInTheDocument();
 });
