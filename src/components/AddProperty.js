@@ -6,6 +6,7 @@ const AddProperty = (props) => {
     fields: {
       title: "",
       city: "Manchester",
+      type: "",
     },
   };
 
@@ -47,6 +48,23 @@ const AddProperty = (props) => {
             <option value="Leeds">Leeds</option>
             <option value="Sheffield">Sheffield</option>
             <option value="Liverpool">Liverpool</option>
+          </select>
+        </label>
+        <label htmlFor="type">
+          Type
+          <select
+            id="type"
+            name="type"
+            value={fields.type}
+            onChange={handleFieldChange}
+          >
+            <option value="Flat">Flat</option>
+            <option value="Detached">Detached</option>
+            <option value="Semi-Detatched">Semi-Detatched</option>
+            <option value="Terraced">Terraced</option>
+            <option value="End of Terrace">End of Terrace</option>
+            <option value="Cottage">Cottage</option>
+            <option value="Bungalow">Bungalow</option>
           </select>
         </label>
         <button type="submit">Add</button>
