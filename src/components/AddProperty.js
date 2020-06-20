@@ -98,7 +98,6 @@ const AddProperty = () => {
               value={fields.price}
               onChange={handleFieldChange}
             />
-            <span>£</span>
           </label>
         </div>
         <div className="add-property-field">
