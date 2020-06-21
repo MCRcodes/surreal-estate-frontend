@@ -2,20 +2,20 @@
 
 exports[`displays a success message 1`] = `
 <DocumentFragment>
-  <p
+  <div
     class="Alert alert-success"
   >
     Success!!!!
-  </p>
+  </div>
 </DocumentFragment>
 `;
 
 exports[`displays an error message 1`] = `
 <DocumentFragment>
-  <p
+  <div
     class="Alert alert-error"
   >
     Error!
-  </p>
+  </div>
 </DocumentFragment>
 `;

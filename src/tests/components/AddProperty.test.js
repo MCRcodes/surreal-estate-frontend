@@ -1,6 +1,6 @@
 import React from "react";
 import { render, fireEvent } from "@testing-library/react";
-import AddProperty from "../components/AddProperty";
+import AddProperty from "../../components/AddProperty";
 
 const mountAndSelectField = (label) => {
   const { getByLabelText } = render(<AddProperty />);

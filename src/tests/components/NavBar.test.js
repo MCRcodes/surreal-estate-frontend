@@ -1,7 +1,7 @@
 import React from "react";
 import { MemoryRouter } from "react-router-dom";
 import { render } from "@testing-library/react";
-import NavBar from "../components/NavBar";
+import NavBar from "../../components/NavBar";
 
 const renderComponent = () => {
   const { asFragment, getByAltText, getByText } = render(
