@@ -7,7 +7,9 @@ const Alert = ({ message, success }) => {
   if (!message) return null;
 
   return (
-    <p className={`Alert alert-${success ? "success" : "error"}`}>{message}</p>
+    <div className={`Alert alert-${success ? "success" : "error"}`}>
+      {message}
+    </div>
   );
 };
 
