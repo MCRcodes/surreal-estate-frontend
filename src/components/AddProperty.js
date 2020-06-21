@@ -53,9 +53,7 @@ const AddProperty = () => {
 
   return (
     <div className="add-property">
-      {alert.message && (
-        <Alert message={alert.message} success={alert.isSuccess} />
-      )}
+      <Alert message={alert.message} success={alert.isSuccess} />
       <form onSubmit={handleAddProperty}>
         <div className="add-property-field">
           <label htmlFor="title">
