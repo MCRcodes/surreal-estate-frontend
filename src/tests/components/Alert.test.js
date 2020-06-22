@@ -5,8 +5,8 @@ import Alert from "../../components/Alert";
 test("displays an error message", () => {
   const { getByText, asFragment } = render(<Alert message="Error!" />);
 
-  expect(asFragment()).toMatchSnapshot();
   expect(getByText(/Error/).textContent).toBe("Error!");
+  expect(asFragment()).toMatchSnapshot();
 });
 
 test("displays a success message", () => {
@@ -14,6 +14,12 @@ test("displays a success message", () => {
     <Alert message="Success!!!!" success />
   );
 
-  expect(asFragment()).toMatchSnapshot();
   expect(getByText(/Success/).textContent).toBe("Success!!!!");
+  expect(asFragment()).toMatchSnapshot();
+});
+
+test("does not render an error or a success message if message props is empty", () => {
+  const { asFragment } = render(<Alert message="" />);
+
+  expect(asFragment()).toMatchSnapshot();
 });
