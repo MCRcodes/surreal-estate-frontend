@@ -20,21 +20,6 @@ const Properties = ({ location }) => {
     const decodedCurrentCity = decodeURIComponent(currentCity);
     if (search !== decodedCurrentCity) {
       filterByCity(search, setCity, setProperties, setAlert);
-      // axios
-      //   .get(`http://localhost:4000/api/v1/PropertyListing${search}`)
-      //   .then(({ data }) => {
-      //     if (data.length === 0) {
-      //       setAlert({ message: "No properties found", isSuccess: true });
-      //       setProperties(data);
-      //     } else {
-      //       setAlert({ message: "", isSuccess: false });
-      //       setCity(search);
-      //       setProperties(data);
-      //     }
-      //   })
-      //   .catch(() =>
-      //     setAlert({ message: "Server error. Please try again later." })
-      //   );
     }
   }, [search, currentCity]);
 
