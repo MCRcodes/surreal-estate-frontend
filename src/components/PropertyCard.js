@@ -17,9 +17,9 @@ const PropertyCard = ({
         <h3>{`${type} - ${city}`}</h3>
       </header>
       <section>
-        <span>{`Bathrooms: ${bathrooms}`}</span>
-        <span>{`Bedrooms: ${bedrooms}`}</span>
-        <span>{`Price: £ ${price}`}</span>
+        <div>{`Bathrooms: ${bathrooms}`}</div>
+        <div>{`Bedrooms: ${bedrooms}`}</div>
+        <div>{`Price: £ ${price}`}</div>
       </section>
       <footer>
         <a href={`mailto:${email}`}>Email</a>
@@ -32,9 +32,9 @@ PropertyCard.propTypes = {
   title: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
   city: PropTypes.string.isRequired,
-  bathrooms: PropTypes.string.isRequired,
-  bedrooms: PropTypes.string.isRequired,
-  price: PropTypes.string.isRequired,
+  bathrooms: PropTypes.number.isRequired,
+  bedrooms: PropTypes.number.isRequired,
+  price: PropTypes.number.isRequired,
   email: PropTypes.string.isRequired,
 };
 
