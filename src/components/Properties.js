@@ -1,27 +1,24 @@
 import React, { useState, useEffect } from "react";
 import Proptypes from "prop-types";
+import { useLocation } from "react-router-dom";
 import PropertyCard from "./PropertyCard";
 import Alert from "./Alert";
 import Sidebar from "./SideBar";
-import { getProperties, filterByCity } from "../requests";
+import { getProperties, filterProperties } from "../requests";
 
 import "../styles/Properties.css";
 
-const Properties = ({ location }) => {
+const Properties = () => {
   const [properties, setProperties] = useState([]);
   const [alert, setAlert] = useState({ message: "", isSuccess: false });
   useEffect(() => {
     getProperties(setProperties, setAlert);
   }, []);
 
-  const { search } = location;
-  const [currentCity, setCity] = useState(search);
+  const { search } = useLocation();
   useEffect(() => {
-    const decodedCurrentCity = decodeURIComponent(currentCity);
-    if (search !== decodedCurrentCity) {
-      filterByCity(search, setCity, setProperties, setAlert);
-    }
-  }, [search, currentCity]);
+    filterProperties(search, setProperties, setAlert);
+  }, [search]);
 
   return (
     <div className="Properties">
