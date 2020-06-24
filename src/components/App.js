@@ -19,7 +19,11 @@ const App = () => {
     <div className="App">
       <NavBar onLogin={handleLogin} onLogout={handleLogout} userID={userID} />
       <Switch>
-        <Route path="/" component={Properties} exact />
+        <Route
+          path="/"
+          exact
+          render={(props) => <Properties {...props} userID={userID} />}
+        />
         <Route path="/add-property" component={AddProperty} exact />
       </Switch>
     </div>

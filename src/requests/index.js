@@ -43,4 +43,24 @@ const saveProperty = (fields, setAlert) =>
       })
     );
 
-export { getProperties, saveProperty, filterProperties };
+const saveFavourite = (propertyId, userID, setAlert) =>
+  axios
+    .post(`${endpoint}/api/v1/Favourite`, {
+      propertyListing: propertyId,
+      fbUserId: userID,
+    })
+    .then(() => setAlert({ message: "Property saved", isSuccess: true }))
+    .then(() =>
+      setTimeout(() => setAlert({ message: "", isSuccess: false }), 3000)
+    )
+    .catch(() =>
+      setAlert({
+        message: "Not possible to save, try again later",
+        isSuccess: false,
+      })
+    )
+    .then(() =>
+      setTimeout(() => setAlert({ message: "", isSuccess: false }), 3000)
+    );
+
+export { getProperties, saveProperty, filterProperties, saveFavourite };
