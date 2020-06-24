@@ -1,6 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import FacebookLogin from "react-facebook-login";
 import "../styles/NavBar.css";
+
+const responseFacebook = (response) => {
+  console.log(response);
+};
 
 function NavBar() {
   return (
@@ -17,6 +22,13 @@ function NavBar() {
         <li className="navbar-links-item">
           <Link to="/add-property">Add Property</Link>
         </li>
+        <FacebookLogin
+          appId="1088597931155576"
+          autoLoad
+          fields="name,email,picture"
+          // onClick={componentClicked}
+          callback={responseFacebook}
+        />
       </ul>
     </div>
   );
