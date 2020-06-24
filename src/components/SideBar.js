@@ -4,6 +4,8 @@ import { buildQueryString } from "../helpers";
 
 import "../styles/SideBar.css";
 
+const cities = ["Manchester", "Leeds", "Sheffield", "Liverpool"];
+
 const SideBar = () => {
   const { search } = useLocation();
   const { push } = useHistory();
@@ -11,7 +13,6 @@ const SideBar = () => {
 
   const handleSearch = (event) => {
     event.preventDefault();
-
     const newQueryString = buildQueryString(
       "query",
       { title: { $regex: searchValue } },
@@ -36,18 +37,11 @@ const SideBar = () => {
       </form>
       <div>
         <h3>Filter By</h3>
-        <Link to={buildQueryString("query", { city: "Manchester" }, search)}>
-          Manchester
-        </Link>
-        <Link to={buildQueryString("query", { city: "Leeds" }, search)}>
-          Leeds
-        </Link>
-        <Link to={buildQueryString("query", { city: "Sheffield" }, search)}>
-          Sheffield
-        </Link>
-        <Link to={buildQueryString("query", { city: "Liverpool" }, search)}>
-          Liverpool
-        </Link>
+        {cities.map((city) => (
+          <Link key={city} to={buildQueryString("query", { city }, search)}>
+            {city}
+          </Link>
+        ))}
       </div>
       <div>
         <h3>Sort By</h3>
