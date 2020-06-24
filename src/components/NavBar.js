@@ -23,7 +23,7 @@ function NavBar() {
           <Link to="/add-property">Add Property</Link>
         </li>
         <FacebookLogin
-          appId="1088597931155576"
+          appId="3048483165266445"
           autoLoad
           fields="name,email,picture"
           // onClick={componentClicked}
