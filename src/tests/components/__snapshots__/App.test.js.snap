@@ -42,29 +42,46 @@ exports[`renders correctly 1`] = `
       <div
         class="SideBar"
       >
-        <h3>
-          Filter By City
-        </h3>
-        <a
-          href="/?query={\\"city\\": \\"Manchester\\"}"
-        >
-          Manchester
-        </a>
-        <a
-          href="/?query={\\"city\\": \\"Leeds\\"}"
-        >
-          Leeds
-        </a>
-        <a
-          href="/?query={\\"city\\": \\"Sheffield\\"}"
-        >
-          Sheffield
-        </a>
-        <a
-          href="/?query={\\"city\\": \\"Liverpool\\"}"
-        >
-          Liverpool
-        </a>
+        <div>
+          <h3>
+            Filter By
+          </h3>
+          <a
+            href="/?query={\\"city\\":\\"Manchester\\"}"
+          >
+            Manchester
+          </a>
+          <a
+            href="/?query={\\"city\\":\\"Leeds\\"}"
+          >
+            Leeds
+          </a>
+          <a
+            href="/?query={\\"city\\":\\"Sheffield\\"}"
+          >
+            Sheffield
+          </a>
+          <a
+            href="/?query={\\"city\\":\\"Liverpool\\"}"
+          >
+            Liverpool
+          </a>
+        </div>
+        <div>
+          <h3>
+            Sort By
+          </h3>
+          <a
+            href="/?sort={\\"price\\":1}"
+          >
+            Ascending
+          </a>
+          <a
+            href="/?sort={\\"price\\":-1}"
+          >
+            Descending
+          </a>
+        </div>
       </div>
     </div>
   </div>
