@@ -8,7 +8,7 @@ const getProperties = (setProperties, setAlert) =>
     .then(({ data }) => setProperties(data))
     .catch(() => setAlert("Server error. Please try again later."));
 
-const filterByCity = (search, setCity, setProperties, setAlert) =>
+const filterProperties = (search, setProperties, setAlert) =>
   axios
     .get(`${endpoint}PropertyListing${search}`)
     .then(({ data }) => {
@@ -18,7 +18,6 @@ const filterByCity = (search, setCity, setProperties, setAlert) =>
       } else {
         setAlert({ message: "", isSuccess: false });
         setProperties(data);
-        setCity(data);
       }
     })
     .catch(() =>
@@ -44,4 +43,4 @@ const saveProperty = (fields, setAlert) =>
       })
     );
 
-export { getProperties, saveProperty, filterByCity };
+export { getProperties, saveProperty, filterProperties };
