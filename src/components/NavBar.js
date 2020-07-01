@@ -22,6 +22,9 @@ const NavBar = ({ onLogin, onLogout, userID }) => (
         <Link to="/">View Properties</Link>
       </li>
       <li className="navbar-links-item">
+        <Link to="/saved-properties">Saved Properties</Link>
+      </li>
+      <li className="navbar-links-item">
         <Link to="/add-property">Add Property</Link>
       </li>
       {!userID ? (

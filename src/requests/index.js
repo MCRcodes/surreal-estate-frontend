@@ -1,16 +1,16 @@
 import axios from "axios";
 
-const endpoint = "http://localhost:4000/api/v1/";
+const api = "http://localhost:4000/api/v1/";
 
-const getProperties = (setProperties, setAlert) =>
+const getProperties = (setProperties, setAlert, endpoint = "PropertyListing") =>
   axios
-    .get(`${endpoint}PropertyListing`)
-    .then(({ data }) => setProperties(data))
+    .get(`${api}${endpoint}`)
+    .then(({ data, propertyListing }) => setProperties(data || propertyListing))
     .catch(() => setAlert("Server error. Please try again later."));
 
 const filterProperties = (search, setProperties, setAlert) =>
   axios
-    .get(`${endpoint}PropertyListing${search}`)
+    .get(`${api}PropertyListing${search}`)
     .then(({ data }) => {
       if (data.length === 0) {
         setAlert({ message: "No properties found", isSuccess: true });
@@ -29,7 +29,7 @@ const filterProperties = (search, setProperties, setAlert) =>
 
 const saveProperty = (fields, setAlert) =>
   axios
-    .post(`${endpoint}PropertyListing`, fields)
+    .post(`${api}PropertyListing`, fields)
     .then(() =>
       setAlert({
         message: "Property Added",
@@ -45,7 +45,7 @@ const saveProperty = (fields, setAlert) =>
 
 const saveFavourite = (propertyId, userID, setAlert) =>
   axios
-    .post(`${endpoint}/api/v1/Favourite`, {
+    .post(`${api}/api/v1/Favourite`, {
       propertyListing: propertyId,
       fbUserId: userID,
     })
@@ -63,4 +63,27 @@ const saveFavourite = (propertyId, userID, setAlert) =>
       setTimeout(() => setAlert({ message: "", isSuccess: false }), 3000)
     );
 
-export { getProperties, saveProperty, filterProperties, saveFavourite };
+const deleteFavourite = (favouriteId, setAlert) =>
+  axios
+    .delete(`${api}Favourite/${favouriteId}`)
+    .then(() => setAlert({ message: "Property deleted", isSuccess: true }))
+    .then(() =>
+      setTimeout(() => setAlert({ message: "", isSuccess: true }), 3000)
+    )
+    .catch(() =>
+      setAlert({
+        message: "Not possible to delete, try again later",
+        isSuccess: false,
+      })
+    )
+    .then(() =>
+      setTimeout(() => setAlert({ message: "", isSuccess: false }), 3000)
+    );
+
+export {
+  getProperties,
+  saveProperty,
+  filterProperties,
+  saveFavourite,
+  deleteFavourite,
+};

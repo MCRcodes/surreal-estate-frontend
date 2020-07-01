@@ -5,6 +5,7 @@ import "../styles/App.css";
 import NavBar from "./NavBar";
 import Properties from "./Properties";
 import AddProperty from "./AddProperty";
+import Favourites from "./Favourites";
 
 const App = () => {
   const [userID, setUserID] = useState("");
@@ -23,6 +24,11 @@ const App = () => {
           path="/"
           exact
           render={(props) => <Properties {...props} userID={userID} />}
+        />
+        <Route
+          path="/saved-properties"
+          exact
+          render={(props) => <Favourites {...props} userID={userID} />}
         />
         <Route path="/add-property" component={AddProperty} exact />
       </Switch>
