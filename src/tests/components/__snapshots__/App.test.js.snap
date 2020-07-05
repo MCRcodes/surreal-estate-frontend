@@ -42,6 +42,19 @@ exports[`renders correctly 1`] = `
       <div
         class="SideBar"
       >
+        <form>
+          <input
+            labelled-by="search"
+            type="text"
+            value=""
+          />
+          <button
+            id="search"
+            type="submit"
+          >
+            Search
+          </button>
+        </form>
         <div>
           <h3>
             Filter By
