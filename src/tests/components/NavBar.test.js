@@ -3,6 +3,10 @@ import { MemoryRouter } from "react-router-dom";
 import { render } from "@testing-library/react";
 import NavBar from "../../components/NavBar";
 
+jest.mock("react-facebook-login", () =>
+  jest.fn(() => <div>Facebook login</div>)
+);
+
 const renderComponent = () => {
   const { asFragment, getByAltText, getByText } = render(
     <MemoryRouter>

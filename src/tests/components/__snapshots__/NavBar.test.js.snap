@@ -26,11 +26,23 @@ exports[`renders correctly 1`] = `
         class="navbar-links-item"
       >
         <a
+          href="/saved-properties"
+        >
+          Saved Properties
+        </a>
+      </li>
+      <li
+        class="navbar-links-item"
+      >
+        <a
           href="/add-property"
         >
           Add Property
         </a>
       </li>
+      <div>
+        Facebook login
+      </div>
     </ul>
   </div>
 </DocumentFragment>
