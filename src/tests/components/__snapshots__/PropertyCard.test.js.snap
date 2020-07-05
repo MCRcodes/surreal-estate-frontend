@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="PropertyCard"
+  >
+    <header>
+      <h2>
+        2 bedroom period property
+      </h2>
+      <h3>
+        Flat - Manchester
+      </h3>
+      <button
+        type="button"
+      >
+        Save
+      </button>
+    </header>
+    <section>
+      <div>
+        Bathrooms: 2
+      </div>
+      <div>
+        Bedrooms: 2
+      </div>
+      <div>
+        Price: £ 1000
+      </div>
+    </section>
+    <footer>
+      <a
+        href="mailto:myemail@email.com"
+      >
+        Email
+      </a>
+    </footer>
+  </div>
+</DocumentFragment>
+`;

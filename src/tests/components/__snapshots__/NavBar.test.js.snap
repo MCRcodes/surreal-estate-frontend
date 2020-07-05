@@ -40,9 +40,11 @@ exports[`renders correctly 1`] = `
           Add Property
         </a>
       </li>
-      <div>
-        Facebook login
-      </div>
+      <button
+        type="button"
+      >
+        Logout
+      </button>
     </ul>
   </div>
 </DocumentFragment>

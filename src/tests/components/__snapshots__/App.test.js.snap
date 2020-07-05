@@ -29,11 +29,23 @@ exports[`renders correctly 1`] = `
           class="navbar-links-item"
         >
           <a
+            href="/saved-properties"
+          >
+            Saved Properties
+          </a>
+        </li>
+        <li
+          class="navbar-links-item"
+        >
+          <a
             href="/add-property"
           >
             Add Property
           </a>
         </li>
+        <div>
+          Facebook login
+        </div>
       </ul>
     </div>
     <div
@@ -42,6 +54,19 @@ exports[`renders correctly 1`] = `
       <div
         class="SideBar"
       >
+        <form>
+          <input
+            labelled-by="search"
+            type="text"
+            value=""
+          />
+          <button
+            id="search"
+            type="submit"
+          >
+            Search
+          </button>
+        </form>
         <div>
           <h3>
             Filter By

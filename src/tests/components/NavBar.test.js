@@ -7,10 +7,16 @@ jest.mock("react-facebook-login", () =>
   jest.fn(() => <div>Facebook login</div>)
 );
 
+const props = {
+  onLogin: jest.fn(),
+  onLogout: jest.fn(),
+  userID: "some user ID",
+};
+
 const renderComponent = () => {
   const { asFragment, getByAltText, getByText } = render(
     <MemoryRouter>
-      <NavBar />
+      <NavBar {...props} />
     </MemoryRouter>
   );
 
@@ -31,7 +37,7 @@ beforeEach(() => {
 test("renders correctly", () => {
   const { asFragment } = render(
     <MemoryRouter>
-      <NavBar />
+      <NavBar {...props} />
     </MemoryRouter>
   );
   expect(asFragment()).toMatchSnapshot();

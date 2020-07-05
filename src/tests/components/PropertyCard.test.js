@@ -10,13 +10,16 @@ const props = {
   price: "1000",
   city: "Manchester",
   email: "myemail@email.com",
+  _id: "some id",
+  onSaveProperty: jest.fn(),
+  userID: "my user id",
 };
 
-// test("renders correctly", () => {
-//   const { asFragment } = render(<PropertyCard />);
+test("renders correctly", () => {
+  const { asFragment } = render(<PropertyCard {...props} />);
 
-//   expect(asFragment()).toMatchSnapshot();
-// });
+  expect(asFragment()).toMatchSnapshot();
+});
 
 test("displays a title", async () => {
   const { findByText } = render(<PropertyCard {...props} />);
